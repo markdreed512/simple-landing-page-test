@@ -5,6 +5,7 @@
 }
 body{
     margin:0;
+    font-family: 'Open Sans', sans-serif;
 }
 .container-fluid{
     padding-left: 0;
@@ -12,11 +13,11 @@ body{
 }
 #top{
     background-color: #ebf4ff;
+    padding-bottom: 100px;
 }
 #demo-btn{
     background-color: #2979EC;
     color: white;
-    font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     margin: 70px 70px;
     padding: 15px 45px;
@@ -42,9 +43,23 @@ h2{
     line-height: 80px;
 }
 #b2b-p{
-    font-family:'Open Sans', sans-serif;
     font-size: 40px;
-    font-weight: 400;
+    line-height: 50px;
+}
+
+#tools-img{
+    width: 625px;
+    float: right;
+}
+#bottom{
+    padding-top: 150px;
+}
+#bottom h3{
+    font-size: 40px;
+    font-weight: 800;
+}
+#bottom p{
+    font-size: 28px;
 }
 
 
