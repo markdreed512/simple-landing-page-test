@@ -1,44 +1,6 @@
-// need to reset modals after submit
-
-// fix gap on right
 $('#demo-modal-form').on("submit", handleDemoSubmit)
 $('#contact-modal-form').on("submit", handleContactSubmit)
-// $('#demo-close-btn').on("click", handleDemoClose)
 
-function handleDemoModalClose(){
-    console.log("handling demo close")
-    $("#demo-modalLabel").html(`Schedule a Demo`)
-    $("#demo-modal-body").html(`<form id="demo-modal-form">
-    <div class="mb-3">
-      <label for="demo-firstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="demo-firstName" aria-describedby="demo-firstName">
-    </div>
-    <div class="mb-3">
-      <label for="demo-lastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="demo-lastName">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>`)
-}
-function handleContactModalClose(){
-    console.log("handling demo close")
-    $("#contact-modalLabel").html(`Contact Us`)
-    $("#contact-modal-body").html(`<form id="contact-modal-form">
-    <div class="mb-3">
-      <label for="contact-firstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="contact-firstName" aria-describedby="contact-firstName">
-    </div>
-    <div class="mb-3">
-      <label for="contact-lastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="contact-lastName">
-    </div>
-    <div class="mb-3">
-        <label for="contact-message" class="form-label">Message</label>
-        <textarea type="text" class="form-control" id="contact-message"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>`)
-}
 function handleDemoSubmit(e){
     e.preventDefault()
     let name = e.target.children[0].children[1].value
@@ -46,7 +8,6 @@ function handleDemoSubmit(e){
     $("#demo-modal-body").html(`<h4>Thanks ${name}! You'll be hearing from one of our agents soon.</h4><button type="button" onclick="handleDemoModalClose()" class="btn btn-secondary mt-5" data-bs-dismiss="modal">Close</button>`)
     throwConfetti("top")
 }  
-
 function handleContactSubmit(e){
     e.preventDefault()
     let name = e.target.children[0].children[1].value
@@ -88,4 +49,39 @@ class Confetti{
         div.css(styles)
         $('body').append(div)
     }
+}
+// I'm not a big fan of just injecting a bunch of HTML in my JS file, but this is the sort of thing I would do entirely different if I were using React. I don't know if it's poor practice or not, but just from a style perspective it doesn't seem very elegent. Who want to parse a bunch of HTML in a JS file?
+function handleDemoModalClose(){
+    console.log("handling demo close")
+    $("#demo-modalLabel").html(`Schedule a Demo`)
+    $("#demo-modal-body").html(`<form id="demo-modal-form">
+    <div class="mb-3">
+      <label for="demo-firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="demo-firstName" aria-describedby="demo-firstName">
+    </div>
+    <div class="mb-3">
+      <label for="demo-lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="demo-lastName">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>`)
+}
+function handleContactModalClose(){
+    console.log("handling demo close")
+    $("#contact-modalLabel").html(`Contact Us`)
+    $("#contact-modal-body").html(`<form id="contact-modal-form">
+    <div class="mb-3">
+      <label for="contact-firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="contact-firstName" aria-describedby="contact-firstName">
+    </div>
+    <div class="mb-3">
+      <label for="contact-lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="contact-lastName">
+    </div>
+    <div class="mb-3">
+        <label for="contact-message" class="form-label">Message</label>
+        <textarea type="text" class="form-control" id="contact-message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>`)
 }
