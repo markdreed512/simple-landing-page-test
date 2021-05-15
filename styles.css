@@ -88,12 +88,20 @@ h3{
     width:264px;
 }
 
-@keyframes fall{
+@keyframes top{
     0%{
-        top: -5vh
+        top: -5vh;
     }
     100%{
         top: 105vh;
+    }
+}
+@keyframes middle{
+    0%{
+        bottom: 150px;
+    }
+    100%{
+        bottom: 0px;
     }
 }
 
