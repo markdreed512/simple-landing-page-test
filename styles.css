@@ -101,10 +101,10 @@ h3{
 }
 @keyframes middle{
     0%{
-        top: 0px;
+        bottom: 500px;
     }
     100%{
-        top: 3000px;
+        bottom: 0px;
     }
 }
 
