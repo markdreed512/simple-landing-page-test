@@ -1,17 +1,9 @@
+// need to reset modals after submit
+// need to reconfigure contact modal in .html, not here
 $('#modal-form').on("submit", handleSubmit)
 $('#contact-btn').on("click", handleContactClick)
 
-{/* <form id="modal-form">
-        <div class="mb-3">
-        <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" aria-describedby="firstName">
-        </div>
-        <div class="mb-3">
-        <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form> */}
+
 function handleContactClick(){
     $("#modalLabel").html(`<h3>Contact Us</h3>`)
     let contactHTML = `
@@ -53,6 +45,7 @@ function handleSubmit(e){
     $(".modal-body").html(`<h4>Thanks ${name}! You'll be hearing from one of our agents soon.</h4><button type="button" class="btn btn-secondary mt-5" data-bs-dismiss="modal">Close</button>`)
     throwConfetti()
 }  
+
 class Confetti{
     constructor(w,h,r,g,b){
         this.w = w
