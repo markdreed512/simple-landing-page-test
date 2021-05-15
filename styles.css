@@ -22,7 +22,7 @@ body{
     margin: 70px 70px;
     padding: 15px 45px;
     border-radius: 40px;
-    float: right;
+    /* float: right; */
     font-weight: 700;
 }
 #logo{
@@ -31,7 +31,7 @@ body{
     margin-left:70px;
 }
 #b2b{
-    clear:both;
+    /* clear:both; */
     margin-top: 30px;
 }
 h1{
@@ -79,13 +79,16 @@ h3{
     background-color: #0A459E;
     color: white;
     font-size: 25px;
-    /* margin: 70px 70px; */
     padding: 15px 45px;
     border: 1px solid white;
     border-radius: 40px;
     float: right;
     font-weight: 700;
     width:264px;
+}
+.confetti{
+    position: absolute;
+    animation-timing-function: ease-in;
 }
 
 @keyframes top{
@@ -98,10 +101,10 @@ h3{
 }
 @keyframes middle{
     0%{
-        bottom: 150px;
+        top: 0px;
     }
     100%{
-        bottom: 0px;
+        top: 3000px;
     }
 }
 

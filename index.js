@@ -1,34 +1,9 @@
 // need to reset modals after submit
-// need to reconfigure contact modal in .html, not here
+
 // fix gap on right
 $('#demo-modal-form').on("submit", handleDemoSubmit)
 $('#contact-modal-form').on("submit", handleContactSubmit)
-// $('#contact-btn').on("click", handleContactClick)
 
-
-// function handleContactClick(){
-//     $("#demo-modalLabel").html(`<h3>Contact Us</h3>`)
-//     let contactHTML = `
-//         <div class="mb-3">
-//             <label for="firstName" class="form-label">First Name</label>
-//             <input type="text" class="form-control" id="firstName" aria-describedby="firstName">
-//         </div>
-//         <div class="mb-3">
-//             <label for="lastName" class="form-label">Last Name</label>
-//             <input type="text" class="form-control" id="lastName">
-//         </div>
-//         <div class="mb-3">
-//             <label for="email" class="form-label">Email</label>
-//             <input type="email" class="form-control" id="email">
-//         </div>
-//         <div class="mb-3">
-//             <label for="message" class="form-label">Message</label>
-//             <textarea type="text" class="form-control" id="email"></textarea>
-//         </div>
-//         <button type="submit" class="btn btn-primary">Submit</button>
-//     `
-//     $(".modal-body").html(contactHTML)
-// }
 
 function handleDemoSubmit(e){
     e.preventDefault()
@@ -61,18 +36,16 @@ class Confetti{
         console.log("showing confetti")
         let div = $('<div>')
         let styles = {
-            position: "absolute",
+            animationName: this.animation,
             left: `${Math.floor(Math.random()*100)}%`,
-            top: `${Math.floor(Math.random()*5) - 10}%`,
             width: `${5 + Math.floor(Math.random() * 10)}px`,
             height: `${10 + Math.floor(Math.random() * 20)}px`,
             transform: `rotate(${Math.floor(Math.random()*360)}deg)`,
             backgroundColor: `rgb(${this.r},${this.g},${this.b})`,
-            animationName: this.animation,
             animationDuration: `${Math.floor(Math.random()*4) + 3}s`,
-            animationDelay: `${Math.floor(Math.random()*2)}s`,
-            animationTimingFunction: "ease-in"
+            animationDelay: `${Math.floor(Math.random()*2)}s`
         }
+        div.addClass("confetti")
         div.css(styles)
         $('body').append(div)
     }
